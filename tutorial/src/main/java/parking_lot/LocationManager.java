@@ -2,6 +2,7 @@ package parking_lot;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class LocationManager {
     /**
@@ -32,5 +33,11 @@ public class LocationManager {
         return locations;
     }
 
+    public List<Location> getBridges() {
+        return locations.stream().filter(x -> x instanceof Bridge).collect(Collectors.toList());
+    }
 
+    public List<Location> getLots() {
+        return locations.stream().filter(x -> x instanceof Lot).collect(Collectors.toList());
+    }
 }
