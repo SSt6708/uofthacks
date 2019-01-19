@@ -15,4 +15,10 @@ public interface Location {
      * @return the Coordinate of the Exit
      */
     Coordinate getExit();
+
+    /**
+     * return the id of the location
+     * @return the id of the location
+     */
+    String getId();
 }
