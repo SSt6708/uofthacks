@@ -1,12 +1,12 @@
 import java.util.Scanner;
 
-public class accounts {
+public class Accounts {
 
     private String Username;
     private String Password;
     private int Balance;
 
-    public accounts(String username, String password, int balance) {
+    public Accounts(String username, String password, int balance) {
         Username = username;
         Password = password;
         Balance = balance;
@@ -32,7 +32,7 @@ public class accounts {
             int balance = Integer.parseInt(in);
 
 
-            accounts b = new accounts(username, password, balance);
+            Accounts b = new Accounts(username, password, balance);
             a.accounts.add(b);
             a.printArray();
         //}
