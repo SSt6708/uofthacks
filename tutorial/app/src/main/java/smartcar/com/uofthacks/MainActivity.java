@@ -71,28 +71,32 @@ public class MainActivity extends AppCompatActivity {
 
                         // TODO: Request Step 2: Get vehicle information
                         // send request to retrieve the vehicle info
-                        Request infoRequest = new Request.Builder()
-                                .url(getString(R.string.app_server) + "/vehicle")
-                                .build();
+                        new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Request infoRequest = new Request.Builder()
+                                        .url(getString(R.string.app_server) + "/vehicle")
+                                        .build();
+                                try {
+                                    Response response = client.newCall(infoRequest).execute();
 
-                        try {
-                            Response response = client.newCall(infoRequest).execute();
+                                    String jsonBody = response.body().string();
+                                    JSONObject JObject = new JSONObject(jsonBody);
 
-                            String jsonBody = response.body().string();
-                            JSONObject JObject = new JSONObject(jsonBody);
+                                    String make = JObject.getString("make");
+                                    String model = JObject.getString("model");
+                                    String year = JObject.getString("year");
 
-                            String make = JObject.getString("make");
-                            String model = JObject.getString("model");
-                            String year = JObject.getString("year");
-
-                            Intent intent = new Intent(appContext, DisplayInfoActivity.class);
-                            intent.putExtra("INFO", make + " " + model + " " + year);
-                            startActivity(intent);
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
+                                    Intent intent = new Intent(appContext, DisplayInfoActivity.class);
+                                    intent.putExtra("INFO", make + " " + model + " " + year);
+                                    startActivity(intent);
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }).start();
                     }
                 }
         );
