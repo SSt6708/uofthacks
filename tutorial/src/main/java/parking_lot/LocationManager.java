@@ -1,7 +1,6 @@
 package parking_lot;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class LocationManager {
     /**

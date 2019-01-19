@@ -8,10 +8,11 @@ public class LotTimer {
     private long endTime;
     private long durationTime = endTime - startTime;
     //gracePeriod in nano seconds.
-    private long gracePeriod = 120 * 1000000000;
+    private long gracePeriod;
 
     public LotTimer(List<Location> lot_coordinates) {
         this.entered = true;
+        setGracePeriod(120);
     }
 
     public boolean overlotTimer() {
