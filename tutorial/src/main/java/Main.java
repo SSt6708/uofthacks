@@ -38,9 +38,9 @@ public class Main {
 
         get("/exchange", (req, res) -> {
             // TODO: Authorization Step 3: Handle Smartcar response
-                    String code = req.queryMap("code").value();
+            String code = req.queryMap("code").value();
 
-                    System.out.println(code);
+            System.out.println(code);
 
             // TODO: Request Step 1: Obtain an access token
             Auth auth = client.exchangeCode(code);
