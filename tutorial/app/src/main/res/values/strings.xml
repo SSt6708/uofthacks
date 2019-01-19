@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">uofthacks</string>
-    <string name="smartcar_auth_scheme">sc[yourClientId]</string>
+    <string name="smartcar_auth_scheme">scf178d328-3a50-4c3a-a7c8-b07a0aca25cf</string>
     <string name="smartcar_auth_host">exchange</string>
     <string name="client_id">f178d328-3a50-4c3a-a7c8-b07a0aca25cf</string>
-    <string name="app_server">http://10.0.2.2:8000</string>
+    <string name="app_server">http://localhost:8000</string>
 </resources>
