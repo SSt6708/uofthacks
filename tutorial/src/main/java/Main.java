@@ -43,18 +43,38 @@ public class Main {
                     System.out.println(code);
 
             // TODO: Request Step 1: Obtain an access token
+            Auth auth = client.exchangeCode(code);
+
+            // in a production app you'll want to store this in some kind of persistent storage
+            access = auth.getAccessToken();
 
             return "";
         });
 
         get("/vehicle", (req, res) -> {
             // TODO: Request Step 2: Get vehicle ids
+            SmartcarResponse<VehicleIds> vehicleIdResponse = AuthClient.getVehicleIds(access);
+            // the list of vehicle ids
+            String[] vehicleIds = vehicleIdResponse.getData().getVehicleIds();
 
             // TODO: Request Step 3: Create a vehicle
+            // instantiate the first vehicle in the vehicle id list
+            Vehicle vehicle = new Vehicle(vehicleIds[0], access);
 
             // TODO: Request Step 4: Make a request to Smartcar API
+            VehicleInfo info = vehicle.info();
+            System.out.println(gson.toJson(info));
 
-            return null;
+            // {
+            //     "id": "36ab27d0-fd9d-4455-823a-ce30af709ffc",
+            //     "make": "TESLA",
+            //     "model": "Model S",
+            //     "year": 2014
+            // }
+
+            res.type("application/json");
+
+            return gson.toJson(info);
         });
     }
 }
