@@ -1,4 +1,4 @@
-package fall2018.csc2017.slidingtiles;
+package smartcar.com.uofthacks;
 
 import java.io.Serializable;
 import java.util.ArrayList;

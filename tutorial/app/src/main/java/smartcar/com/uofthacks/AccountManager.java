@@ -1,4 +1,4 @@
-package fall2018.csc2017.slidingtiles;
+package smartcar.com.uofthacks;
 
 import android.app.Activity;
 
@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static android.content.Context.MODE_PRIVATE;
-import static fall2018.csc2017.slidingtiles.UtilityManager.makeCustomToastText;
+
 
 /**
  * Manage an account, including creating, saving and getting account information.
