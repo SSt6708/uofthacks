@@ -15,7 +15,7 @@ public class LotTimer {
         setGracePeriod(120);
     }
 
-    public boolean overlotTimer() {
+    public boolean overLotTimer() {
         if (totalTime() > gracePeriod) {
             return true;
         }
