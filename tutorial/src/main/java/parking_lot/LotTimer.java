@@ -29,10 +29,11 @@ public class LotTimer {
                 endTime = System.nanoTime();
             }
         }
+        resetTimer();
         return durationTime;
     }
 
-    private void ResetTimer() {
+    private void resetTimer() {
         durationTime = 0;
     }
 
