@@ -14,22 +14,22 @@ public class LotTimer {
         this.entered = true;
     }
 
-    public boolean OverLotTimer() {
+    public boolean overlotTimer() {
+        if (totalTime() > gracePeriod) {
+            return true;
+        }
+        return false;
+    }
+
+    public long totalTime() {
         if (entered) {
             startTime = System.nanoTime();
             endTime = System.nanoTime();
             while (entered) {
                 endTime = System.nanoTime();
-                if (durationTime >= gracePeriod) {
-                    return true;
-                } else if (!entered && durationTime < gracePeriod) {
-                    ResetTimer();
-                    return false;
-
-                }
             }
         }
-        return false;
+        return durationTime;
     }
 
     private void ResetTimer() {
