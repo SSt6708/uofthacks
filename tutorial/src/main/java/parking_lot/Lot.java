@@ -3,6 +3,10 @@ package parking_lot;
 public class Lot implements Location{
     private Coordinate entrance;
     private Coordinate exit;
+    /**
+     * the (unique) id of the Lot
+     */
+    private String id;
 
     /**
      * Create a new Lot with entrance and exit
@@ -20,6 +24,9 @@ public class Lot implements Location{
 
     public Coordinate getExit() {
         return exit;
+    }
+    public String getId(){
+        return id;
     }
 
 }
