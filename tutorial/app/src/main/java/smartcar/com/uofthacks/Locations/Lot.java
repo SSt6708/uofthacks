@@ -1,4 +1,4 @@
-package Locations;
+package smartcar.com.uofthacks.Locations;
 
 public class Lot implements Location{
     private Coordinate entrance;

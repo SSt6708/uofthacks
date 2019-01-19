@@ -1,3 +1,5 @@
+package smartcar.com.uofthacks;
+
 import java.util.Scanner;
 
 public class Accounts {

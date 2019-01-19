@@ -1,4 +1,4 @@
-package Locations;
+package smartcar.com.uofthacks.Locations;
 
 import java.util.*;
 
@@ -16,7 +16,7 @@ public class LocationManager {
     public LocationManager() {
         this.locations = new HashMap<>();
         for (String locationType: LOCATION_TYPES) {
-            this.locations.put(locationType, new ArrayList<>());
+            this.locations.put(locationType, new ArrayList<Location>());
         }
     }
 

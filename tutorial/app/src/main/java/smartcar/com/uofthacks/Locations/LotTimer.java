@@ -1,4 +1,4 @@
-package Locations;
+package smartcar.com.uofthacks.Locations;
 
 import java.util.List;
 

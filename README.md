@@ -1,2 +1,0 @@
-# uofthacks
-our uofthacks project
