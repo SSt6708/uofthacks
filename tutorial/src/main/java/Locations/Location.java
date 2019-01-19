@@ -1,4 +1,4 @@
-package parking_lot;
+package Locations;
 
 public interface Location {
 

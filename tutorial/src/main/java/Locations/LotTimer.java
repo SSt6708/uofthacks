@@ -1,4 +1,4 @@
-package parking_lot;
+package Locations;
 
 import java.util.List;
 

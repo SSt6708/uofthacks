@@ -1,4 +1,4 @@
-package parking_lot;
+package Locations;
 
 public class Coordinate {
     private double Longitude;
